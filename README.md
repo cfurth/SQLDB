@@ -4,7 +4,7 @@
 
 ## Setup Steps
 1. Download DMG archive version of mysql installer for Mac 11.1 at https://dev.mysql.com/downloads/mysql/
-2. Install mysql on Mac
+2. Install mysql 8 on Mac
 3. Go into the terminal and run the following commands:
 * cd /usr/local/mysql - This will change the current directory to the one where MySQL server is installed.
 * sudo bin/mysql_secure_installation - This command will ask for your computer password. This will start a script which will ask you several questions to reconfigure MySQL.
@@ -18,3 +18,9 @@ If you have more than one computer that will be using this data then answer n. I
 Select Y and press Enter. You don’t need that test database so it is safe to remove it.
   * Reload privilege tables now? [Y/n]
 Select Y and press Enter. This will make the changes you did effective now.
+
+4. Run npm install mysql2
+I installed mysql2 and not mysql to use caching_sha2_password in mysql 8 instead of mysql_native_password used in previous versions as a crypto
+algorithm with several handshakes is more secure than plain password passing.
+5. Create a new file for Node.js code used to interact with your db (mysql.js). Remember to require the mysql2 package. 
+6. Create a connection using mysql.createConnection(), pass in the host, username, and password, and create a database to begin populating.
