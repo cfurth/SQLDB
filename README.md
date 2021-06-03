@@ -21,6 +21,6 @@ Select Y and press Enter. This will make the changes you did effective now.
 
 4. Run npm install mysql2
 I installed mysql2 and not mysql to use caching_sha2_password in mysql 8 instead of mysql_native_password used in previous versions as a crypto
-algorithm with several handshakes is more secure than plain password passing.
+algorithm with several handshakes is more secure than plain password passing. Mysql2 also allows for additional features of Node.js to be used
 5. Create a new file for Node.js code used to interact with your db (mysql.js). Remember to require the mysql2 package. 
 6. Create a connection using mysql.createConnection(), pass in the host, username, and password, and create a database to begin populating.
